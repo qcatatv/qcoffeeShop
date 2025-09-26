@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import Link from "next/link";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -16,24 +17,24 @@ export default function Navbar() {
         {/* Desktop Menu */}
         <ul className="hidden md:flex gap-8 text-lg">
           <li>
-            <a href="#home" className="hover:text-yellow-300">
+            <Link href="/" className="hover:text-yellow-300">
               Home
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#menu" className="hover:text-yellow-300">
+            <Link href="/menu" className="hover:text-yellow-300">
               Menu
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#about" className="hover:text-yellow-300">
+            <Link href="/about" className="hover:text-yellow-300">
               About Us
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#contact" className="hover:text-yellow-300">
+            <Link href="/contact" className="hover:text-yellow-300">
               Contact
-            </a>
+            </Link>
           </li>
         </ul>
 
