@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 3, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"","debugId":null}},
+    {"offset": {"line": 15, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/qcata/Desktop/codingLearn/webAgency/qcoffeeShop/src/app/careers/page.tsx"],"sourcesContent":["import React from 'react'\r\n\r\nexport default function page() {\r\n  return (\r\n    <div>\r\n      \r\n    </div>\r\n  )\r\n}\r\n"],"names":[],"mappings":";;;;;;AAEe,SAAS;IACtB,qBACE,oSAAC;;;;;AAIL","debugId":null}}]
+}

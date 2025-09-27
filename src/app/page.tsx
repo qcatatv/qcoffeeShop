@@ -27,11 +27,11 @@ export default function page() {
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <button className="group bg-white hover:bg-gray-100 text-black font-medium py-4 px-8 rounded-full transition-all duration-300 flex items-center gap-2">
-              Explore Menu
+              <a href="/menu">Explore Menu</a>
               <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
             </button>
             <button className="border border-white/20 hover:border-white/40 text-white font-medium py-4 px-8 rounded-full transition-all duration-300">
-              Our Story
+              <a href="/about">Our Story</a>
             </button>
           </div>
         </div>

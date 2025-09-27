@@ -1,0 +1,21 @@
+{
+  "pages": {
+    "/careers/page": [
+      "static/chunks/7ed1a_next_dist_53063165._.js",
+      "static/chunks/Desktop_codingLearn_webAgency_qcoffeeShop_src_app_favicon_ico_mjs_e6b5bb12._.js",
+      "static/chunks/[root-of-the-server]__45005c95._.css",
+      "static/chunks/Desktop_codingLearn_webAgency_qcoffeeShop_9fbf97eb._.js",
+      "static/chunks/Desktop_codingLearn_webAgency_qcoffeeShop_src_app_layout_tsx_f136abad._.js",
+      "static/chunks/7ed1a_next_dist_client_components_builtin_global-error_cc67ab0a.js",
+      "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_b9713d3b._.js",
+      "static/chunks/7ed1a_next_dist_compiled_react-dom_d6c3d0c9._.js",
+      "static/chunks/7ed1a_next_dist_compiled_next-devtools_index_171b0d2a.js",
+      "static/chunks/7ed1a_next_dist_compiled_833e2ac2._.js",
+      "static/chunks/7ed1a_next_dist_client_4d94a385._.js",
+      "static/chunks/7ed1a_next_dist_fbcb6620._.js",
+      "static/chunks/7ed1a_@swc_helpers_cjs_4c8f473c._.js",
+      "static/chunks/Desktop_codingLearn_webAgency_qcoffeeShop_a0ff3932._.js",
+      "static/chunks/turbopack-Desktop_codingLearn_webAgency_qcoffeeShop_4adc18a4._.js"
+    ]
+  }
+}
