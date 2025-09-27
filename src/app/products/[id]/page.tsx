@@ -11,20 +11,54 @@ const products = [
     icon: <Coffee size={32} />,
     price: "$4.50",
     description: "Rich, bold, perfectly extracted",
-    longDescription: "Our signature espresso is crafted with precision using premium arabica beans, resulting in a perfectly balanced shot with rich crema and intense flavor notes.",
+    longDescription:
+      "Our signature espresso is crafted with precision using premium arabica beans, resulting in a perfectly balanced shot with rich crema and intense flavor notes.",
     ingredients: ["Premium Arabica Beans", "Filtered Water"],
     nutritionalInfo: {
       calories: "5 kcal",
       caffeine: "63 mg",
-      servingSize: "1 oz (30ml)"
-    }
+      servingSize: "1 oz (30ml)",
+    },
+  },
+  {
+    id: 2,
+    name: "Espresso",
+    category: "Signature Coffee",
+    icon: <Coffee size={32} />,
+    price: "$4.50",
+    description: "Rich, bold, perfectly extracted",
+    longDescription:
+      "Our signature espresso is crafted with precision using premium arabica beans, resulting in a perfectly balanced shot with rich crema and intense flavor notes.",
+    ingredients: ["Premium Arabica Beans", "Filtered Water"],
+    nutritionalInfo: {
+      calories: "5 kcal",
+      caffeine: "63 mg",
+      servingSize: "1 oz (30ml)",
+    },
+  },
+  {
+    id: 3,
+    name: "Espresso",
+    category: "Signature Coffee",
+    icon: <Coffee size={32} />,
+    price: "$4.50",
+    description: "Rich, bold, perfectly extracted",
+    longDescription:
+      "Our signature espresso is crafted with precision using premium arabica beans, resulting in a perfectly balanced shot with rich crema and intense flavor notes.",
+    ingredients: ["Premium Arabica Beans", "Filtered Water"],
+    nutritionalInfo: {
+      calories: "5 kcal",
+      caffeine: "63 mg",
+      servingSize: "1 oz (30ml)",
+    },
   },
   // Add other products with extended information
 ];
 
-export default function ProductPage({ params }: { params: { id: string } }) {
-  const product = products.find(p => p.id === parseInt(params.id));
-  
+export default function ProductPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = React.use(params);
+  const product = products.find((p) => p.id === parseInt(id));
+
   if (!product) {
     return notFound();
   }
@@ -35,15 +69,15 @@ export default function ProductPage({ params }: { params: { id: string } }) {
         <div className="grid md:grid-cols-2 gap-12">
           {/* Product Image/Icon Section */}
           <div className="bg-[#1a1a1a] rounded-3xl p-12 flex items-center justify-center">
-            <div className="text-white/60 w-32 h-32">
-              {product.icon}
-            </div>
+            <div className="text-white/60 w-32 h-32">{product.icon}</div>
           </div>
 
           {/* Product Details Section */}
           <div className="space-y-6">
             <div>
-              <h1 className="text-4xl font-bold text-white mb-2">{product.name}</h1>
+              <h1 className="text-4xl font-bold text-white mb-2">
+                {product.name}
+              </h1>
               <p className="text-white/60">{product.category}</p>
             </div>
 
@@ -67,14 +101,18 @@ export default function ProductPage({ params }: { params: { id: string } }) {
 
               {product.nutritionalInfo && (
                 <div>
-                  <h3 className="text-white font-semibold mb-2">Nutritional Information</h3>
+                  <h3 className="text-white font-semibold mb-2">
+                    Nutritional Information
+                  </h3>
                   <dl className="grid grid-cols-2 gap-2 text-white/60">
-                    {Object.entries(product.nutritionalInfo).map(([key, value]) => (
-                      <div key={key}>
-                        <dt className="capitalize">{key}:</dt>
-                        <dd>{value}</dd>
-                      </div>
-                    ))}
+                    {Object.entries(product.nutritionalInfo).map(
+                      ([key, value]) => (
+                        <div key={key}>
+                          <dt className="capitalize">{key}:</dt>
+                          <dd>{value}</dd>
+                        </div>
+                      )
+                    )}
                   </dl>
                 </div>
               )}
