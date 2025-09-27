@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { notFound } from "next/navigation";
-import { Coffee, Leaf, Cookie, ShoppingBag } from "lucide-react";
+import { Coffee } from "lucide-react";
 
 const products = [
   {
