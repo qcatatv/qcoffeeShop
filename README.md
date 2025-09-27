@@ -2,7 +2,7 @@
 
 A modern, responsive coffee shop website built with Next.js 13, TypeScript, and Tailwind CSS.
 
-![qCoffee Shop](public/preview.png)
+qCoffee Shop
 
 ## 🚀 Features
 
@@ -133,8 +133,8 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 ## 👤 Author
 
 Your Name
-- GitHub: [@yourusername](https://github.com/yourusername)
-- Website: [your-website.com](https://your-website.com)
+- GitHub: [@yourusername](https://github.com/qcatatv)
+- Website: [your-website.com](https://qdevstudio.vercel.app/)
 
 ---
 
