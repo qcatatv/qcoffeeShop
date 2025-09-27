@@ -1,6 +1,7 @@
 import React from 'react'
 import { Coffee } from 'lucide-react'
 import Link from 'next/link'
+import { products } from '../data/products'
 
 const menuCategories = [
   {
@@ -74,27 +75,32 @@ export default function page() {
               </div>
 
               <div className="grid md:grid-cols-2 gap-8">
-                {category.items.map((item, itemIdx) => (
-                  <Link 
-                    href={`/products/${itemIdx}`} 
-                    key={itemIdx}
-                    className="group bg-[#1a1a1a] rounded-xl p-6 border border-white/5 hover:border-white/10 transition-all duration-300"
-                  >
-                    <div className="flex justify-between items-start">
-                      <div>
-                        <h3 className="text-white group-hover:text-white/90 font-medium">
-                          {item.name}
-                        </h3>
-                        <p className="text-sm text-white/40 mt-1">
-                          {item.description}
-                        </p>
+                {category.items.map((item) => {
+                  const product = products.find(p => p.name === item.name);
+                  const productId = product ? product.id : item.name.toLowerCase().replace(/\s+/g, '-');
+                  
+                  return (
+                    <Link 
+                      href={`/products/${productId}`} 
+                      key={productId}
+                      className="group bg-[#1a1a1a] rounded-xl p-6 border border-white/5 hover:border-white/10 transition-all duration-300"
+                    >
+                      <div className="flex justify-between items-start">
+                        <div>
+                          <h3 className="text-white group-hover:text-white/90 font-medium">
+                            {item.name}
+                          </h3>
+                          <p className="text-sm text-white/40 mt-1">
+                            {item.description}
+                          </p>
+                        </div>
+                        <span className="text-white/70 font-medium">
+                          {item.price}
+                        </span>
                       </div>
-                      <span className="text-white/70 font-medium">
-                        {item.price}
-                      </span>
-                    </div>
-                  </Link>
-                ))}
+                    </Link>
+                  );
+                })}
               </div>
             </div>
           ))}

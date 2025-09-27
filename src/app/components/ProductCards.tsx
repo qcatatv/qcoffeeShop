@@ -2,49 +2,23 @@
 import React from "react";
 import { Coffee, Leaf, Cookie, ShoppingBag, ArrowRight } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
+import { products } from "../data/products";
 
 export default function ProductCards() {
-  const allProducts = [
-    {
-      id: 1,
-      name: "Espresso",
-      category: "Signature Coffee",
-      icon: <Coffee size={32} />,
-      price: "$4.50",
-      description: "Rich, bold, perfectly extracted",
-    },
-    {
-      id: 2,
-      name: "Matcha Latte",
-      category: "Specialty Drinks",
-      icon: <Leaf size={32} />,
-      price: "$5.50",
-      badge: "NEW",
-      description: "Premium Japanese green tea blend",
-    },
-    {
-      id: 3,
-      name: "Artisan Croissant",
-      category: "Fresh Pastries",
-      icon: <Cookie size={32} />,
-      price: "$3.75",
-      description: "Flaky, buttery, house-made daily",
-    },
-    {
-      id: 4,
-      name: "Brew Box",
-      category: "Coffee Beans",
-      icon: <ShoppingBag size={32} />,
-      price: "$18.99",
-      badge: "POPULAR",
-      description: "250g premium roasted beans",
-    }
-  ];
+  // Get featured products (one from each category)
+  const featuredProducts = React.useMemo(() => {
+    const categories = [...new Set(products.map(p => p.category))];
+    return categories
+      .map(category => products.find(p => p.category === category))
+      .filter((product): product is NonNullable<typeof product> => product !== undefined)
+      .slice(0, 4);
+  }, []);
 
   return (
     <div className="w-full">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {allProducts.map((product) => (
+        {featuredProducts.map((product) => (
           <Link
             key={product.id}
             href={`/products/${product.id}`}
@@ -56,16 +30,23 @@ export default function ProductCards() {
               
               {/* Content */}
               <div className="relative">
-                {/* Badge */}
-                {product.badge && (
-                  <span className="absolute -top-2 -right-2 bg-white/10 backdrop-blur-md text-[10px] text-white px-3 py-1 rounded-full">
-                    {product.badge}
-                  </span>
-                )}
-
-                {/* Icon */}
-                <div className="mb-4 text-white/40 group-hover:text-white/60 transition-colors duration-300">
-                  {product.icon}
+                {/* Product Image or Icon */}
+                <div className="mb-4 aspect-square relative rounded-xl overflow-hidden bg-black/20">
+                  {product.image ? (
+                    <Image
+                      src={product.image}
+                      alt={product.name}
+                      fill
+                      className="object-cover opacity-80 group-hover:opacity-100 transition-opacity"
+                    />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center text-white/40 group-hover:text-white/60 transition-colors duration-300">
+                      {product.category.includes("Coffee") && <Coffee size={32} />}
+                      {product.category.includes("Tea") && <Leaf size={32} />}
+                      {product.category.includes("Pastries") && <Cookie size={32} />}
+                      {product.category.includes("Beans") && <ShoppingBag size={32} />}
+                    </div>
+                  )}
                 </div>
 
                 {/* Text Content */}
@@ -87,7 +68,7 @@ export default function ProductCards() {
                     {product.price}
                   </span>
                   <span className="flex items-center gap-2 text-xs text-white/50 hover:text-white group-hover:text-white/70 transition-colors">
-                    Order
+                    View Details
                     <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
                   </span>
                 </div>
