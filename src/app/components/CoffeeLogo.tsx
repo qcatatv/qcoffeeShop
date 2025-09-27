@@ -6,7 +6,6 @@ const logos = [
   "/images/CostaCoffee.png",
   "/images/CostaCoffee.png",
   "/images/CostaCoffee.png",
-  "/images/CostaCoffee.png",
 ];
 
 export default function CoffeeLogo() {
