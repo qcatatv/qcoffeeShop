@@ -133,8 +133,8 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 ## 👤 Author
 
 Your Name
-- GitHub: [@yourusername](https://github.com/qcatatv)
-- Website: [your-website.com](https://qdevstudio.vercel.app/)
+- GitHub: [@qcatatv](https://github.com/qcatatv)
+- Website: [qDevStudio](https://qdevstudio.vercel.app/)
 
 ---
 
